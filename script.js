@@ -1,9 +1,14 @@
-arg1 = prompt("Choose your first number.")
-arg2 = prompt("Choose your second number.")
+let numbers = [];
+let addResult = 0;
 
-function add(arg1, arg2) {
-    addResult = arg1 + arg2;
+numbers.push(Number(prompt("Please choose your first number.")));
+numbers.push(Number(prompt("Please choose your second number.")));
+
+function add() {
+    addResult = numbers[0] + numbers[1];
     return addResult;
 }
+
+add();
 
 console.log(addResult);
