@@ -43,7 +43,6 @@ for (i = 0; i <= numDivs; i++) {
     div.style.borderColor = "white";
     div.style.margin = '2px';
     div.style.color = 'white';
-    while (i < 10)
 
     container.appendChild(div);
 };
