@@ -24,6 +24,8 @@ body {
 }
 
 #numDisplay {
+    box-sizing: border-box;
+    padding: 5px;
     width: 252px;
     height: 75px;
     background: black;
@@ -42,6 +44,7 @@ body {
     align-items: center;
     border: 1px solid black;
     box-sizing: border-box;
+    transform: 
 }
 
 .calcTop {
@@ -58,4 +61,12 @@ body {
 
 .calcZero {
     flex: 2 1 50%;
+}
+
+.key {
+    transition: all 0.05s;
+}
+
+.calcHit {
+    color: black;
 }

@@ -1,7 +1,5 @@
 let numbers = [];
-
-numbers.push(Number(prompt("Please choose your first number.")));
-numbers.push(Number(prompt("Please choose your second number.")));
+let numberList = [];
 
 function add() {
     addResult = numbers[0] + numbers[1];
@@ -29,3 +27,26 @@ Subtraction: ${numbers[0]} - ${numbers[1]} = ${subtract()}
 Multiplication: ${numbers[0]} x ${numbers[1]} = ${multiply()}
 Division: ${numbers[0]} / ${numbers[1]} = ${divide()}
 `);
+
+window.addEventListener('keydown', function(e) {
+    const key = document.querySelector(`.key[data-key="${e.key}"]`);
+
+    key.classList.add('calcHit');
+
+    function removeTransition(e) {
+        if (e.propertyName !== 'color') return;
+        this.classList.remove('calcHit');
+    }
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+    numberList.push(e.key);
+
+    const numDisplay = document.querySelector('#numDisplay');
+
+    numDisplay.textContent = numberList.join('');
+
+    console.log(numberList)
+
+});
